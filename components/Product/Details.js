@@ -1,12 +1,30 @@
 import React, { useState } from "react";
+import Comment from "./Comment";
 
-const Details = ({ details, description }) => {
+const Details = ({ details, description, comments }) => {
   const [activeTab, setActiveTab] = useState("details");
+
+  console.log(comments);
 
   let content;
   switch (activeTab) {
     case "reviews":
-      content = <div className="farsi-text px-4">reviews tab</div>;
+      content = (
+        <div className="farsi-text mx-2 py-4 dark:bg-shadeDark bg-shadeLight rounded-md farsi-text">
+          {comments.nodes.length ? (
+            comments.nodes.map((com) => (
+              <Comment
+                name={com.author.node.name}
+                avatar={com.author.node.avatar.url}
+                content={com.content}
+                date={com.date}
+              />
+            ))
+          ) : (
+            <p className="text-center">هیچ نظری برای این کالا ثبت نشده است</p>
+          )}
+        </div>
+      );
       break;
     case "info":
       content = (

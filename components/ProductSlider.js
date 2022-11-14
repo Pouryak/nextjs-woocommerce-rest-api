@@ -1,6 +1,5 @@
 import React from "react";
 import ProductCard from "./ProductCard";
-import { ProductsData } from "../data/products-data";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";

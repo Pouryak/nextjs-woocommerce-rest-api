@@ -12,9 +12,3 @@ export const getProductsData = async (perPage) => {
     per_page: perPage || 50,
   });
 };
-
-export const getSingleProduct = async (productId) => {
-  return await api.get("products", {
-    id: productId,
-  });
-};

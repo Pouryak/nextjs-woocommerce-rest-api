@@ -7,7 +7,6 @@ import {
   HEADER_FOOTER_ENDPOINT,
   GET_PRODUCTS_ENDPOINT,
 } from "../../utils/constants/endpoints";
-import { ProductData } from "../../data/product-data";
 
 import SingleProductCard from "../../components/Product/SingleProductCard";
 import Productslider from "../../components/ProductSlider";
@@ -19,7 +18,6 @@ const SingleProduct = ({ headerFooter, product }) => {
   const productAttributes = product.attributes.nodes;
   const productDescription = product.description;
   const productComments = product.reviews;
-  console.log(productComments);
 
   return (
     <>
@@ -27,7 +25,11 @@ const SingleProduct = ({ headerFooter, product }) => {
       {/* Main Container */}
       <div className="container mx-auto">
         <SingleProductCard data={product} />
-        <Details details={productAttributes} description={productDescription} />
+        <Details
+          details={productAttributes}
+          description={productDescription}
+          comments={productComments}
+        />
         {/* Related Products */}
         <div className="mt-6">
           <h2 className="farsi-text">محصولات مشابه</h2>
