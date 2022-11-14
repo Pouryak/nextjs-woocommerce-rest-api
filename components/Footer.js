@@ -14,10 +14,15 @@ const Footer = ({ data }) => {
         {/* Logos */}
         <div className="flex space-x-4">
           <div className="border border-gray-200 dark:border-secondaryDark rounded-md p-2 grow-0 h-fit">
-            <Image src={enamad} height={100} width={100} />
+            <Image alt="enamad-logo" src={enamad} height={100} width={100} />
           </div>
           <div className="border border-gray-200 dark:border-secondaryDark rounded-md p-2 grow-0 h-fit">
-            <Image src={zarinpal} height={100} width={100} />
+            <Image
+              alt="zarinpal-logo"
+              src={zarinpal}
+              height={100}
+              width={100}
+            />
           </div>
         </div>
         {/* Menu 1: Articles */}

@@ -21,8 +21,12 @@ const ProductCard = ({ slug, id, title, price, imageURL }) => {
       <div className="mt-2">
         <p className="text-sm mb-3">{title}</p>
         <div className="flex justify-between items-center">
-          <div>
-            {price} <span className="text-xsm">تومان</span>
+          <div className="flex items-center">
+            <p
+              className="ml-1 text-md"
+              dangerouslySetInnerHTML={{ __html: price.replace("تومان", "") }}
+            ></p>
+            <span className="text-sm">تومان</span>
           </div>
           <MdAddBox
             size={32}
@@ -31,6 +35,7 @@ const ProductCard = ({ slug, id, title, price, imageURL }) => {
         </div>
       </div>
     </div>
+    // <span className="text-xsm">تومان</span>
   );
 };
 

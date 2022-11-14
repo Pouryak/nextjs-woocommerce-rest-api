@@ -7,6 +7,7 @@ const CategoryItem = (props) => {
     <Link key={props.id} href="#">
       <div className="justify-center items-center text-center cursor-pointer">
         <Image
+          alt={`${props.id}-cat`}
           src={props.image}
           height={150}
           width={150}

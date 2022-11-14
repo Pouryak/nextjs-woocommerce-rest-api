@@ -11,18 +11,22 @@ const SingleProductCard = ({ data }) => {
       <div className="flex p-6 justify-between">
         <div className="flex">
           {/* Image */}
-          <Image
-            src={data.image.mediaItemUrl}
-            height={350}
-            width={350}
-            className="rounded-md"
-            alt={data.image.mediaItemUrl.title}
-          />
+          <div className="z-0">
+            <Image
+              src={data.image.mediaItemUrl}
+              height={350}
+              width={350}
+              className="rounded-md relative"
+              alt={data.image.mediaItemUrl.title}
+            />
+          </div>
           {/* Product Information */}
           <div className="flex flex-col space-y-3 pr-14 justify-between">
             <div>
               {/* Category */}
-              <p className="text-sm dark:text-gray-300 text-gray-600">ماوس</p>
+              <p className="text-xsm tracking-wide dark:text-gray-300 text-gray-600">
+                {data.productCategories.nodes[0].name}
+              </p>
               {/* Persian Title */}
               <div className="pt-3">
                 <h1 className="text-xlg font-bold ">{data.name}</h1>

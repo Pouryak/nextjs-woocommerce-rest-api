@@ -4,13 +4,11 @@ import Comment from "./Comment";
 const Details = ({ details, description, comments }) => {
   const [activeTab, setActiveTab] = useState("details");
 
-  console.log(comments);
-
   let content;
   switch (activeTab) {
     case "reviews":
       content = (
-        <div className="farsi-text mx-2 py-4 dark:bg-shadeDark bg-shadeLight rounded-md farsi-text">
+        <div className="flex flex-col space-y-4 farsi-text mx-4 py-3 ">
           {comments.nodes.length ? (
             comments.nodes.map((com) => (
               <Comment

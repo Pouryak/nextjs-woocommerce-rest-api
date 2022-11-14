@@ -8,7 +8,7 @@ import "swiper/css/free-mode";
 
 const ProductSlider = ({ data }) => {
   return (
-    <div className="justify-center bg-primaryBg my-4">
+    <div className="justify-center bg-primaryBg my-4 z-10">
       <Swiper
         freeMode={true}
         modules={[Autoplay]}
@@ -30,13 +30,13 @@ const ProductSlider = ({ data }) => {
         }}
       >
         {data.map((product) => (
-          <SwiperSlide key={`${product.slug}-slide`}>
+          <SwiperSlide key={product.id}>
             <ProductCard
               slug={product.slug}
               id={product.id}
               title={product.name}
               price={product.price}
-              imageURL={product.images[0].src}
+              imageURL={product.image.sourceUrl}
             />
           </SwiperSlide>
         ))}

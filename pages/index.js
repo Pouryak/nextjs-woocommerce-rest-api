@@ -1,9 +1,7 @@
 import axios from "axios";
-import { getProductsData } from "./api/get-products";
-import {
-  HEADER_FOOTER_ENDPOINT,
-  GET_PRODUCTS_ENDPOINT,
-} from "../utils/constants/endpoints";
+import { gql } from "@apollo/client";
+import { client } from "../lib/apollo";
+import { HEADER_FOOTER_ENDPOINT } from "../utils/constants/endpoints";
 
 import Header from "../components/Header";
 import Baner from "../components/BanerCarousel";
@@ -22,7 +20,7 @@ export default function Home({ headerFooter, newProducts }) {
       <Header data={header} />
       <Baner />
       <Features />
-      {/* <SpecialOffers /> */}
+      <SpecialOffers data={newProducts} />
       <Categories />
       <NewProducts data={newProducts} />
       <BottomBanners />
@@ -33,12 +31,35 @@ export default function Home({ headerFooter, newProducts }) {
 
 export async function getStaticProps() {
   const { data: headerFooterData } = await axios.get(HEADER_FOOTER_ENDPOINT);
-  const { data: newProducts } = await getProductsData(20); // lastest 20 products
+
+  const GET_LATEST_PRODUCTS = gql`
+    query getProducts {
+      products(first: 10) {
+        nodes {
+          ... on SimpleProduct {
+            id
+            name
+            price
+            slug
+            image {
+              altText
+              sourceUrl
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const response = await client.query({
+    query: GET_LATEST_PRODUCTS,
+  });
+  const products = response?.data?.products?.nodes;
 
   return {
     props: {
       headerFooter: headerFooterData?.data ?? {},
-      newProducts: newProducts ?? {},
+      newProducts: products ?? {},
     },
 
     revalidate: 10,
