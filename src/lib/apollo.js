@@ -22,3 +22,9 @@ export const client = new ApolloClient({
   }),
   cache: new InMemoryCache(),
 });
+
+// import { ApolloProvider } from "@apollo/client/react";
+// import { client } from "../lib/apollo";
+
+// Import top modules in app.js
+// Wrapp the entire app with ApolloProvider and pass the client as client ie. client={client}

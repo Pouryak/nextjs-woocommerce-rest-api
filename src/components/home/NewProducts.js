@@ -1,5 +1,5 @@
 import React from "react";
-import ProductSlider from "./ProductSlider";
+import ProductSlider from "../global/ProductSlider";
 
 const NewProducts = ({ data }) => {
   return (

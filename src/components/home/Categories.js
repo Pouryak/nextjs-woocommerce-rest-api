@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Cats } from "../data/cats";
+import { Cats } from "../../data/cats";
 import CategoryItem from "./CategoryItem";
 
 const Categories = () => {

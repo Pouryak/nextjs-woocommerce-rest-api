@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "next/image";
+import AddToCart from "../cart/AddToCart";
+
 import { CiDeliveryTruck, CiStar, CiCalendar } from "react-icons/ci";
 import { RiHeartAddLine } from "react-icons/ri";
 import { IoBagAddSharp } from "react-icons/io5";
@@ -13,11 +15,11 @@ const SingleProductCard = ({ data }) => {
           {/* Image */}
           <div className="z-0">
             <Image
-              src={data.image.mediaItemUrl}
+              src={data.images[0].src}
               height={350}
               width={350}
               className="rounded-md relative"
-              alt={data.image.mediaItemUrl.title}
+              alt={data.images[0].alt}
             />
           </div>
           {/* Product Information */}
@@ -25,7 +27,7 @@ const SingleProductCard = ({ data }) => {
             <div>
               {/* Category */}
               <p className="text-xsm tracking-wide dark:text-gray-300 text-gray-600">
-                {data.productCategories.nodes[0].name}
+                {data.categories[0].name}
               </p>
               {/* Persian Title */}
               <div className="pt-3">

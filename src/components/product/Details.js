@@ -9,7 +9,7 @@ const Details = ({ details, description, comments }) => {
     case "reviews":
       content = (
         <div className="flex flex-col space-y-4 farsi-text mx-4 py-3 ">
-          {comments.nodes.length ? (
+          {comments?.nodes?.length ? (
             comments.nodes.map((com) => (
               <Comment
                 name={com.author.node.name}
@@ -19,7 +19,7 @@ const Details = ({ details, description, comments }) => {
               />
             ))
           ) : (
-            <p className="text-center">هیچ نظری برای این کالا ثبت نشده است</p>
+            <p className="text-center">هیچ نظری برای این محصول ثبت نشده است</p>
           )}
         </div>
       );
@@ -40,7 +40,7 @@ const Details = ({ details, description, comments }) => {
               className="flex space-x-2 items-center justify-between"
             >
               <div className="dark:bg-shadeDark bg-shadeLight px-4 py-2 w-3/4 farsi-text rounded-sm">
-                {item.options}
+                {item.options[0]}
               </div>
               <div className="dark:bg-shadeDark bg-shadeLight px-4 py-2 w-1/4 rounded-sm">
                 {item.name}

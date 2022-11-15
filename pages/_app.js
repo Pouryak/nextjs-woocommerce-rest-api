@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import "../styles/globals.css";
+import "../src/styles/globals.css";
 
-import { ApolloProvider } from "@apollo/client/react";
-import { client } from "../lib/apollo";
 import { ThemeProvider } from "next-themes";
-
-import LoadingSpinner from "../components/LoadingSpinner";
+import LoadingSpinner from "../components/global/LoadingSpinner";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -24,12 +21,10 @@ function MyApp({ Component, pageProps }) {
   }, [router]);
 
   return (
-    <ApolloProvider client={client}>
-      <ThemeProvider attribute="class">
-        {loading ? <LoadingSpinner /> : null}
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </ApolloProvider>
+    <ThemeProvider attribute="class">
+      {loading ? <LoadingSpinner /> : null}
+      <Component {...pageProps} />
+    </ThemeProvider>
   );
 }
 

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import { isEmpty, isArray } from "lodash";
-import enamad from "../public/enamad.png";
-import zarinpal from "../public/zarinpal.svg";
+import enamad from "../../public/enamad.png";
+import zarinpal from "../../public/zarinpal.svg";
 
 const Footer = ({ data }) => {
   const { footerMenuItems, socialLinks } = data;

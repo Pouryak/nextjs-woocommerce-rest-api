@@ -34,9 +34,10 @@ const ProductSlider = ({ data }) => {
             <ProductCard
               slug={product.slug}
               id={product.id}
+              dbId={product.databaseId}
               title={product.name}
               price={product.price}
-              imageURL={product.image.sourceUrl}
+              imageURL={product.images[0].src}
             />
           </SwiperSlide>
         ))}

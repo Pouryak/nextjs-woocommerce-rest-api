@@ -12,3 +12,7 @@ export const getProductsData = async (perPage) => {
     per_page: perPage || 50,
   });
 };
+
+export const getProduct = async (slug) => {
+  return await api.get(`products/?slug=${slug}`, {});
+};

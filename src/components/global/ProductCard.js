@@ -1,13 +1,16 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import AddToCart from "../cart/AddToCart";
 
-import { MdAddBox } from "react-icons/md";
-
-const ProductCard = ({ slug, id, title, price, imageURL }) => {
+const ProductCard = ({ slug, id, dbId, title, price, imageURL }) => {
   return (
     <div key={id} className="product-card farsi-text my-4">
-      <Link key={`${id}-link`} href={`/product/${slug}`} className="">
+      <Link
+        key={`${id}-link`}
+        href={{ pathname: `/product/${slug}` }}
+        className=""
+      >
         <a>
           <Image
             className="border rounded-md cursor-pointer"
@@ -28,14 +31,10 @@ const ProductCard = ({ slug, id, title, price, imageURL }) => {
             ></p>
             <span className="text-sm">تومان</span>
           </div>
-          <MdAddBox
-            size={32}
-            className="cursor-pointer hover:fill-green-500 duration-75"
-          />
+          <AddToCart productId={dbId} />
         </div>
       </div>
     </div>
-    // <span className="text-xsm">تومان</span>
   );
 };
 

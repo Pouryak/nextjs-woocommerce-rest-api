@@ -1,18 +1,17 @@
 import axios from "axios";
-import { gql } from "@apollo/client";
-import { client } from "../lib/apollo";
-import { HEADER_FOOTER_ENDPOINT } from "../utils/constants/endpoints";
+import { HEADER_FOOTER_ENDPOINT } from "../../utils/constants/endpoints";
+import { getProductsData } from "./api/get-products";
 
-import Header from "../components/Header";
-import Baner from "../components/BanerCarousel";
-import Features from "../components/Features";
-import SpecialOffers from "../components/SpecialOffers";
-import Footer from "../components/Footer";
-import Categories from "../components/Categories";
-import NewProducts from "../components/NewProducts";
-import BottomBanners from "../components/BottomBanners";
+import Header from "../src/components/global/Header";
+import Baner from "../src/components/home/BanerCarousel";
+import Features from "../src/components/home/Features";
+import SpecialOffers from "../src/components/home/SpecialOffers";
+import Footer from "../src/components/global/Footer";
+import Categories from "../src/components/home/Categories";
+import NewProducts from "../src/components/home/NewProducts";
+import BottomBanners from "../src/components/home/BottomBanners";
 
-export default function Home({ headerFooter, newProducts }) {
+export default function Home({ headerFooter, products }) {
   const { header, footer } = headerFooter;
 
   return (
@@ -20,9 +19,9 @@ export default function Home({ headerFooter, newProducts }) {
       <Header data={header} />
       <Baner />
       <Features />
-      <SpecialOffers data={newProducts} />
+      <SpecialOffers data={products} />
       <Categories />
-      <NewProducts data={newProducts} />
+      <NewProducts data={products} />
       <BottomBanners />
       <Footer data={footer} />
     </>
@@ -31,35 +30,12 @@ export default function Home({ headerFooter, newProducts }) {
 
 export async function getStaticProps() {
   const { data: headerFooterData } = await axios.get(HEADER_FOOTER_ENDPOINT);
-
-  const GET_LATEST_PRODUCTS = gql`
-    query getProducts {
-      products(first: 10) {
-        nodes {
-          ... on SimpleProduct {
-            id
-            name
-            price
-            slug
-            image {
-              altText
-              sourceUrl
-            }
-          }
-        }
-      }
-    }
-  `;
-
-  const response = await client.query({
-    query: GET_LATEST_PRODUCTS,
-  });
-  const products = response?.data?.products?.nodes;
+  const { data: products } = await getProductsData(20);
 
   return {
     props: {
       headerFooter: headerFooterData?.data ?? {},
-      newProducts: products ?? {},
+      products: products || null,
     },
 
     revalidate: 10,
