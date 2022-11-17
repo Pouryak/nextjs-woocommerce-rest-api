@@ -1,8 +1,12 @@
 import Link from "next/link";
 import Head from "next/head";
+import { useContext } from "react";
+
+import { CartContext } from "../context/cart-context";
 import { isEmpty } from "lodash";
 import { useTheme } from "next-themes";
 import { MdOutlineLightMode, MdBedtime } from "react-icons/md";
+import { CgMenu } from "react-icons/cg";
 import { ImPhone } from "react-icons/im";
 import {
   FaShoppingCart,
@@ -13,6 +17,7 @@ import {
 
 const Header = ({ data }) => {
   const { theme, setTheme } = useTheme();
+  const [cart, setCart] = useContext(CartContext);
 
   const { headerMenuItems, siteDescription, siteLogoUrl, siteTitle, favicon } =
     data;
@@ -23,7 +28,8 @@ const Header = ({ data }) => {
         <title>{siteTitle || "Next WooCommerce"}</title>
         <link rel="icon" href={favicon || "/favicon.ico"} />
       </Head>
-      <div className="bg-secondaryLight dark:bg-secondaryDark">
+      {/* Desktop/Tablet */}
+      <div className="bg-secondaryLight dark:bg-secondaryDark xsm:hidden md:block">
         <div className="container mx-auto pt-4 space-y-4">
           {/* <!-- Upper Nav --> */}
           <div className="flex justify-between items-center text-sm pb-2 divider">
@@ -57,16 +63,20 @@ const Header = ({ data }) => {
           </div>
 
           {/* <!-- Lower Nav --> */}
-          <div className="flex space-x-6 items-center justify-between">
+          <div className="flex xsm:flex-col md:flex-row md:space-x-6 md:space-y-0 xsm:space-y-4 xsm:space-x-0 items-center justify-between">
             <div className="flex space-x-4 items-center">
               <Link href="/my-account">
                 <a className="nav-button">
                   <FaUser />
                 </a>
               </Link>
+
               <Link href="/cart">
-                <a className="nav-button">
+                <a className="nav-button relative">
                   <FaShoppingCart />
+                  <span className="absolute bg-red-500 rounded-full text-center px-1 -top-3 -right-2">
+                    {cart?.totalQty ? `${cart?.totalQty}` : null}
+                  </span>
                 </a>
               </Link>
               <a
@@ -113,6 +123,53 @@ const Header = ({ data }) => {
             </div>
           </nav>
         </div>
+      </div>
+      {/* Mobile */}
+      <div className="flex flex-col space-y-3 bg-secondaryLight dark:bg-secondaryDark xsm:block md:hidden p-3">
+        {/* Upper Nav */}
+        <div className="flex space-x-4 items-center justify-between">
+          <div className="flex space-x-4 items-center">
+            <Link href="/my-account">
+              <a className="nav-button">
+                <FaUser />
+              </a>
+            </Link>
+            <Link href="/cart">
+              <a className="nav-button relative">
+                <FaShoppingCart />
+                <span className="absolute bg-red-500 rounded-full text-center px-1 -top-3 -right-2">
+                  {cart?.totalQty ? `${cart?.totalQty}` : null}
+                </span>
+              </a>
+            </Link>
+          </div>
+          {/* Logo */}
+          <div>
+            <Link className="shrink" href="/">
+              <a className="website-logo text-2xl dark:text-white text-gray-800  justify-self-end">
+                {siteTitle || "SiteTitle"}
+              </a>
+            </Link>
+          </div>
+          {/* Mobile Nav */}
+          <div className="flex space-x-4">
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="nav-button"
+            >
+              {theme === "dark" ? <MdBedtime /> : <MdOutlineLightMode />}
+            </button>
+            <button className="nav-button">
+              <CgMenu />
+            </button>
+          </div>
+        </div>
+        {/* Lower Nav/Search bar */}
+        <input
+          className="rounded-md py-2 px-4 focus:outline-none border border-gray-200 dark:border-secondaryDark placeholder:text-right grow w-full farsi-text"
+          type="search"
+          placeholder="کالاتو جستجو کن"
+        />
       </div>
     </>
   );

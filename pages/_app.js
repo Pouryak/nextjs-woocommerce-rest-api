@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import "../src/styles/globals.css";
+import { CartContextProvider } from "../src/components/context/cart-context";
 
 import { ThemeProvider } from "next-themes";
-import LoadingSpinner from "../components/global/LoadingSpinner";
+import LoadingSpinner from "../src/components/global/LoadingSpinner";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -21,10 +22,12 @@ function MyApp({ Component, pageProps }) {
   }, [router]);
 
   return (
-    <ThemeProvider attribute="class">
-      {loading ? <LoadingSpinner /> : null}
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <CartContextProvider>
+      <ThemeProvider attribute="class">
+        {loading ? <LoadingSpinner /> : null}
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </CartContextProvider>
   );
 }
 

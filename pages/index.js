@@ -1,5 +1,5 @@
 import axios from "axios";
-import { HEADER_FOOTER_ENDPOINT } from "../../utils/constants/endpoints";
+import { HEADER_FOOTER_ENDPOINT } from "../src/utils/constants/endpoints";
 import { getProductsData } from "./api/get-products";
 
 import Header from "../src/components/global/Header";
@@ -38,6 +38,6 @@ export async function getStaticProps() {
       products: products || null,
     },
 
-    revalidate: 10,
+    revalidate: 60,
   };
 }

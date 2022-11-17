@@ -19,21 +19,21 @@
   .website-logo {
     font-family: "Dancing Script", cursive;
   }
-
   .loader-spinner {
     background: rgba(255, 255, 255, 0.25);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   }
-
   .product-card {
-    @apply bg-secondaryLight dark:bg-secondaryDark rounded-md justify-center items-center shadow-sm p-4 hover:scale-105 hover:shadow-md duration-200;
+    @apply bg-secondaryLight dark:bg-secondaryDark rounded-md justify-center items-center shadow-sm p-3 my-4 hover:scale-105 hover:shadow-md duration-200;
   }
   .product-details-tab {
     @apply flex justify-center py-2 px-3 rounded-lg cursor-pointer shadow-sm;
   }
-
+  .add-cart-button {
+    @apply cursor-pointer border border-gray-200 dark:border-secondaryDark mt-2 ml-3 px-3 py-1 dark:hover:bg-shadeDark hover:bg-shadeLight rounded-md;
+  }
   .nav-button {
     @apply cursor-pointer border border-gray-200 dark:border-secondaryDark dark:hover:bg-shadeDark hover:bg-shadeLight p-3 rounded-md;
   }
@@ -43,14 +43,12 @@
   .list-item {
     @apply pr-5;
   }
-
   .footer-item {
     @apply text-sm text-gray-500 dark:text-gray-400 hover:text-green-400 dark:hover:text-green-200 duration-150 cursor-pointer;
   }
   .farsi-text {
     direction: rtl;
   }
-
   .divider {
     @apply border-b border-gray-200 dark:border-secondaryDark;
   }

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import { isEmpty, isArray } from "lodash";
-import enamad from "../../public/enamad.png";
-import zarinpal from "../../public/zarinpal.svg";
+import enamad from "../../../public/enamad.png";
+import zarinpal from "../../../public/zarinpal.svg";
 
 const Footer = ({ data }) => {
   const { footerMenuItems, socialLinks } = data;
@@ -10,9 +10,9 @@ const Footer = ({ data }) => {
   return (
     <footer className="bg-secondaryLight dark:bg-secondaryDark p-4 ">
       {/* Main container */}
-      <div className="container mx-auto flex justify-between py-16">
+      <div className="container mx-auto flex md:flex-row md:text-right xsm:flex-col xsm:text-center xsm:space-y-5 justify-between py-16">
         {/* Logos */}
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 justify-center">
           <div className="border border-gray-200 dark:border-secondaryDark rounded-md p-2 grow-0 h-fit">
             <Image alt="enamad-logo" src={enamad} height={100} width={100} />
           </div>
