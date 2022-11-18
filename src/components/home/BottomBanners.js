@@ -1,11 +1,17 @@
-import React from "react";
 import Image from "next/image";
+
+import BottomBanner1 from "../../../public/images/bottom-baner/baner-1.jpg";
+import BottomBanner2 from "../../../public/images/bottom-baner/baner-2.jpg";
 
 const BottomBanners = () => {
   return (
-    <div className="container mx-auto flex space-x-6 mb-6">
-      <div className="bg-green-500 rounded-md h-[200px] w-[50%]">banner</div>
-      <div className="bg-green-500 rounded-md h-[200px] w-[50%]">banner</div>
+    <div className="container mx-auto flex md:flex-row xsm:flex-col xsm:space-x-0 md:space-x-2 xsm:space-y-2 md:space-y-0 mb-6">
+      <div>
+        <Image src={BottomBanner1} className="rounded-lg" />
+      </div>
+      <div>
+        <Image src={BottomBanner2} className="rounded-lg" />
+      </div>
     </div>
   );
 };

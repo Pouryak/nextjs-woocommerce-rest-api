@@ -15,12 +15,13 @@ const ProductSlider = ({ data }) => {
         className="mySwipper"
         slidesPerView={6}
         spaceBetween={8}
+        preloadImages={true}
         breakpoints={{
           0: { slidesPerView: 1, spaceBetween: 8 },
           480: { slidesPerView: 2, spaceBetween: 8 },
           768: { slidesPerView: 3, spaceBetween: 8 },
-          1020: { slidesPerView: 5, spaceBetween: 8 },
-          1440: { slidesPerView: 6, spaceBetween: 8 },
+          1020: { slidesPerView: 4, spaceBetween: 8 },
+          1440: { slidesPerView: 5, spaceBetween: 8 },
         }}
         autoplay={{
           disableOnInteraction: false,
@@ -34,7 +35,6 @@ const ProductSlider = ({ data }) => {
             <ProductCard
               slug={product.slug}
               id={product.id}
-              dbId={product.databaseId}
               title={product.name}
               price={product.price}
               imageURL={product.images[0].src}

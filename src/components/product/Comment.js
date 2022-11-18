@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import userPLaceholder from "../../public/user-placeholder.png";
+import userPLaceholder from "../../../public/user-placeholder.png";
 
 const Comment = ({ name, avatar, date, content }) => {
   return (

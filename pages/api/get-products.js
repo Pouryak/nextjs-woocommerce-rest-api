@@ -16,3 +16,7 @@ export const getProductsData = async (perPage) => {
 export const getProduct = async (slug) => {
   return await api.get(`products/?slug=${slug}`, {});
 };
+
+export const getProductsByCategory = async (id) => {
+  return await api.get(`products/?categories=${id}`, {});
+};

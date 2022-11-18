@@ -2,37 +2,40 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import AddToCart from "../cart/AddToCart";
+import { IoBagAddOutline } from "react-icons/io5";
 
-const ProductCard = ({ slug, id, dbId, title, price, imageURL }) => {
+const ProductCard = ({ slug, id, title, price, imageURL }) => {
   return (
-    <div key={id} className="product-card farsi-text my-4">
-      <Link
-        key={`${id}-link`}
-        href={{ pathname: `/product/${slug}` }}
-        className=""
-      >
-        <a>
-          <Image
-            className="border rounded-md cursor-pointer"
-            src={imageURL}
-            width={210}
-            height={210}
-            alt={`product-${id}`}
-          />
-        </a>
-      </Link>
+    <div key={id} className="product-card farsi-text">
+      <div>
+        <Link
+          key={`${id}-link`}
+          href={{ pathname: `/product/${slug}` }}
+          className="items-center"
+        >
+          <a>
+            <Image
+              className="border rounded-md cursor-pointer"
+              src={imageURL}
+              width={220}
+              height={220}
+              alt={`product-${id}`}
+            />
+          </a>
+        </Link>
+      </div>
       <div className="mt-2">
-        <p className="text-sm mb-3">{title}</p>
-        <div className="flex justify-between items-center">
-          <div className="flex items-center">
-            <p
-              className="ml-1 text-md"
-              dangerouslySetInnerHTML={{ __html: price.replace("تومان", "") }}
-            ></p>
-            <span className="text-sm">تومان</span>
-          </div>
-          <AddToCart productId={dbId} />
+        <p className="text-md font-bold mb-1">{title}</p>
+        <div className="flex font-bold items-center dark:text-green-400 text-green-700">
+          <p
+            className="ml-1 text-lg"
+            dangerouslySetInnerHTML={{ __html: price.replace("تومان", "") }}
+          ></p>
+          <span className="text-sm">تومان</span>
         </div>
+        <AddToCart productId={id}>
+          <IoBagAddOutline size={26} />
+        </AddToCart>
       </div>
     </div>
   );

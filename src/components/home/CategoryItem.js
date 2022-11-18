@@ -13,7 +13,7 @@ const CategoryItem = (props) => {
           width={150}
           className="hover:scale-105 duration-150"
         />
-        <p className="text-sm">{props.title}</p>
+        <p className="text-md">{props.title}</p>
       </div>
     </Link>
   );

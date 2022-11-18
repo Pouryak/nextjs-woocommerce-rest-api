@@ -1,19 +1,16 @@
-import React from "react";
 import Image from "next/image";
+import Baner1 from "../../../public/images/slider/1.jpg";
 
 const Baner = () => {
   return (
     <div className="container mx-auto my-4">
-      <div className="grid overflow-hidden grid-lines grid-cols-4 grid-rows-2 gap-6 h-[500px]">
-        <div className="box row-end-2 col-start-1 col-end-1 overflow-hidden items-center justify-center shadow-sm">
-          Baner 1
+      <div className="flex lg:h-[440px] md:h-[340px] sm:h-[300px] xsm:h-[220px] space-x-3">
+        <div className="box w-3/6 shadow-sm xsm:hidden lg:block mr-2 justify-center items-center text-center">
+          <div>
+            <a className="font-bold text-xlg text-center">Site Baner</a>
+          </div>
         </div>
-        <div className="box row-start-2 col-start-1 col-end-2 overflow-hidden shadow-sm">
-          Baner 2
-        </div>
-        <div className="box row-span-2 col-start-2 col-span-3 overflow-hidden shadow-sm">
-          Slider
-        </div>
+        <Image src={Baner1} className="rounded-lg md:w-3/6" />
       </div>
     </div>
   );

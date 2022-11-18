@@ -58,7 +58,7 @@ const Details = ({ details, description, comments }) => {
           onClick={() => setActiveTab("reviews")}
           className={`product-details-tab ${
             activeTab === "reviews"
-              ? "bg-green-400"
+              ? "bg-green-400 text-white"
               : "bg-secondaryLight dark:bg-secondaryDark"
           }`}
         >
@@ -68,7 +68,7 @@ const Details = ({ details, description, comments }) => {
           onClick={() => setActiveTab("info")}
           className={`product-details-tab ${
             activeTab === "info"
-              ? "bg-green-400"
+              ? "bg-green-400 text-white"
               : "bg-secondaryLight dark:bg-secondaryDark"
           }`}
         >
@@ -78,7 +78,7 @@ const Details = ({ details, description, comments }) => {
           onClick={() => setActiveTab("details")}
           className={`product-details-tab ${
             activeTab === "details"
-              ? "bg-green-400"
+              ? "bg-green-400 text-white"
               : "bg-secondaryLight dark:bg-secondaryDark"
           }`}
         >
