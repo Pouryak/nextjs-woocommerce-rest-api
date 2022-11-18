@@ -3,7 +3,7 @@ import Link from "next/link";
 import LoadingCart from "./LoadingCart";
 import { addToCart } from "../../utils/cart/index";
 import { CartContext } from "../context/cart-context";
-import { IoAddCircleOutline } from "react-icons/io5";
+import { IoBagAddOutline } from "react-icons/io5";
 
 function AddToCart({ productId }) {
   const [cart, setCart] = useContext(CartContext);
@@ -20,7 +20,7 @@ function AddToCart({ productId }) {
         disabled={isLoading}
       >
         {/* <MdAddCircleOutline size={16} /> */}
-        {isLoading ? <LoadingCart /> : <IoAddCircleOutline size={24} />}
+        {isLoading ? <LoadingCart /> : <IoBagAddOutline size={24} />}
       </button>
       {isAddedToCart && !isLoading ? (
         <Link href="/cart">

@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
+import Image from "next/image";
 import { isEmpty } from "lodash";
 import { deleteCartItem, updateCart } from "../../utils/cart";
-import spinner from "../../../public/cart-spinner.gif";
-import Image from "next/image";
 
 import { CiSquarePlus, CiSquareMinus } from "react-icons/ci";
 import { TfiMedallAlt } from "react-icons/tfi";
-import { MdDelete } from "react-icons/md";
+import { CiCircleRemove } from "react-icons/ci";
 import LoadingCart from "./LoadingCart";
+import Link from "next/link";
 
 const CartItem = ({ item, products, setCart }) => {
   const [productCount, setProductCount] = useState(item.quantity);
@@ -105,12 +105,14 @@ const CartItem = ({ item, products, setCart }) => {
         {/* Image Box */}
         <div className="flex">
           <div className="ml-5">
-            <Image
-              src={!isEmpty(productImg?.src) ? productImg.src : ""}
-              width={180}
-              height={180}
-              className="rounded-md"
-            />
+            <Link href={`/product/${item?.data?.slug}`}>
+              <Image
+                src={!isEmpty(productImg?.src) ? productImg.src : ""}
+                width={180}
+                height={180}
+                className="rounded-md"
+              />
+            </Link>
           </div>
           {/* Details Box */}
           <div className="flex flex-col justify-between space-y-3 lg:py-4 md:py-2">
@@ -136,7 +138,7 @@ const CartItem = ({ item, products, setCart }) => {
                   }
                   className="hover:scale-105 hover:shadow-sm cursor-pointer"
                 >
-                  <CiSquarePlus color="green" size={26} />
+                  <CiSquarePlus color="green" size={28} />
                 </button>
                 {/* <a className="ml-2 mr-2 text-lg">24</a> */}
                 <input
@@ -156,7 +158,7 @@ const CartItem = ({ item, products, setCart }) => {
                   }
                   className="hover:scale-105 hover:shadow-sm cursor-pointer"
                 >
-                  <CiSquareMinus color="red" size={26} />
+                  <CiSquareMinus color="red" size={28} />
                 </button>
               </div>
               {/* updating loading spinner */}
@@ -174,12 +176,12 @@ const CartItem = ({ item, products, setCart }) => {
             }}
             className="hover:scale-105 duration-150"
           >
-            <MdDelete className="hover:fill-red-500" size={26} />
+            <CiCircleRemove className="hover:fill-red-500" size={28} />
           </button>
 
           <div className="flex">
             <p className="ml-4">قیمت:</p>
-            <div className="flex">
+            <div className="text-lg flex dark:text-green-400 text-green-700">
               <div className="ml-2">{item?.line_subtotal}</div>
               <div>{item?.currency}</div>
             </div>

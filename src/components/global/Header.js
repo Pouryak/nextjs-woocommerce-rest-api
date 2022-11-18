@@ -1,10 +1,10 @@
 import Link from "next/link";
 import Head from "next/head";
-import { useContext } from "react";
 
+import { useContext } from "react";
 import { CartContext } from "../context/cart-context";
-import { isEmpty } from "lodash";
 import { useTheme } from "next-themes";
+
 import { MdOutlineLightMode, MdBedtime } from "react-icons/md";
 import { CgMenu } from "react-icons/cg";
 import { ImPhone } from "react-icons/im";
@@ -15,18 +15,15 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 
-const Header = ({ data }) => {
+const Header = () => {
   const { theme, setTheme } = useTheme();
   const [cart, setCart] = useContext(CartContext);
-
-  const { headerMenuItems, siteDescription, siteLogoUrl, siteTitle, favicon } =
-    data;
 
   return (
     <>
       <Head>
-        <title>{siteTitle || "Next WooCommerce"}</title>
-        <link rel="icon" href={favicon || "/favicon.ico"} />
+        <title>Next WooCommerce</title>
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* Desktop/Tablet */}
       <div className="bg-secondaryLight dark:bg-secondaryDark xsm:hidden md:block">
@@ -39,14 +36,20 @@ const Header = ({ data }) => {
                 <ImPhone size={18} />
                 <span className="font-medium">021-123456789</span>
               </div>
-              <div className="flex space-x-1 justify-center items-center rounded-md bg-red-500 px-3 py-1">
+              <a
+                href="https://Instagram.com/pouryak"
+                className="flex space-x-1 justify-center items-center rounded-md bg-red-500 px-3 py-1"
+              >
                 <FaInstagram size={18} />
                 <span className="font-medium ">Instagram</span>
-              </div>
-              <div className="flex space-x-1 justify-center items-center rounded-md bg-blue-400 px-3 py-1">
+              </a>
+              <a
+                href="https://telegram.com/pouryak"
+                className="flex space-x-1 justify-center items-center rounded-md bg-blue-400 px-3 py-1"
+              >
                 <FaTelegram size={18} />
                 <span className="font-medium">Telegram</span>
-              </div>
+              </a>
             </div>
             {/* <!-- Right nav --> */}
             <div className="flex space-x-4">
@@ -61,7 +64,6 @@ const Header = ({ data }) => {
               </Link>
             </div>
           </div>
-
           {/* <!-- Lower Nav --> */}
           <div className="flex xsm:flex-col md:flex-row md:space-x-6 md:space-y-0 xsm:space-y-4 xsm:space-x-0 items-center justify-between">
             <div className="flex space-x-4 items-center">
@@ -74,7 +76,7 @@ const Header = ({ data }) => {
               <Link href="/cart">
                 <a className="nav-button relative">
                   <FaShoppingCart />
-                  <span className="absolute bg-red-500 rounded-full text-center px-1 -top-3 -right-2">
+                  <span className="absolute bg-red-500 text-white rounded-full text-center px-2 -top-3 -right-2">
                     {cart?.totalQty ? `${cart?.totalQty}` : null}
                   </span>
                 </a>
@@ -86,40 +88,47 @@ const Header = ({ data }) => {
                 {theme === "dark" ? <MdBedtime /> : <MdOutlineLightMode />}
               </a>
             </div>
-
+            {/* Search Input */}
             <input
-              className="rounded-md py-2 px-4 focus:outline-none border border-gray-200 dark:border-secondaryDark placeholder:text-right grow max-w-[600px] farsi-text"
+              className="rounded-md py-2 px-4 focus:outline-none border border-gray-200 dark:border-secondaryDark placeholder:text-right grow farsi-text max-w-[600px]"
               type="search"
               placeholder="کالاتو جستجو کن"
             />
-
-            {/* LOGO */}
-            {/* <img
-              src={siteLogoUrl}
-              alt={`${siteLogoUrl} Logo`}
-              className="mr-2"
-            /> */}
             <Link href="/">
               <a className="website-logo text-3xl dark:text-white text-gray-800  justify-self-end">
-                {siteTitle || "SiteTitle"}
+                SiteTitle
               </a>
             </Link>
           </div>
           {/* Navbar */}
           <nav className="">
             <div className="flex farsi-text text-right">
-              {!isEmpty(headerMenuItems) && headerMenuItems.length
-                ? headerMenuItems.map((item) => (
-                    <div
-                      className="px-5 py-1 dark:hover:bg-shadeDark hover:bg-shadeLight duration-150"
-                      key={`${item.id}-${item.title}`}
-                    >
-                      <Link href={item?.url || "/"}>
-                        <a>{item.title}</a>
-                      </Link>
-                    </div>
-                  ))
-                : null}
+              {/* Main page */}
+              <div className="px-5 py-1 dark:hover:bg-shadeDark hover:bg-shadeLight duration-150">
+                <Link href="/">
+                  <a>صفحه اصلی</a>
+                </Link>
+              </div>
+              <div className="px-5 py-1 dark:hover:bg-shadeDark hover:bg-shadeLight duration-150">
+                <Link href="/categories/computer-and-parts">
+                  <a>کامپیوتر و تجهیزات</a>
+                </Link>
+              </div>
+              <div className="px-5 py-1 dark:hover:bg-shadeDark hover:bg-shadeLight duration-150">
+                <Link href="/categories/laptop-and-accessories">
+                  <a>لپ تاپ و قطعات</a>
+                </Link>
+              </div>
+              <div className="px-5 py-1 dark:hover:bg-shadeDark hover:bg-shadeLight duration-150">
+                <Link href="/categories/mobile-and-tablet">
+                  <a>موبایل و تبلت</a>
+                </Link>
+              </div>
+              <div className="px-5 py-1 dark:hover:bg-shadeDark hover:bg-shadeLight duration-150">
+                <Link href="/categories/home-consoles">
+                  <a>کنسول های خانگی</a>
+                </Link>
+              </div>
             </div>
           </nav>
         </div>
@@ -147,7 +156,7 @@ const Header = ({ data }) => {
           <div>
             <Link className="shrink" href="/">
               <a className="website-logo text-2xl dark:text-white text-gray-800  justify-self-end">
-                {siteTitle || "SiteTitle"}
+                SiteTitle
               </a>
             </Link>
           </div>

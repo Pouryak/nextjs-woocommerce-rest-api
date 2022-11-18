@@ -55,7 +55,6 @@ export const viewCart = (setCart, setProcessing = () => {}) => {
     .then((res) => {
       const formattedCartData = getFormattedCartData(res?.data ?? []);
       setCart(formattedCartData);
-      console.log("response", res);
       setProcessing(false);
     })
     .catch((err) => {

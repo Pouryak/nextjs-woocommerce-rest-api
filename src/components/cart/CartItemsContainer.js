@@ -22,7 +22,7 @@ const CartItemsContainer = () => {
   return (
     <div className="container mx-auto flex lg:flex-row xsm:flex-col my-6 farsi-text">
       {/* Cart Products List */}
-      <div className="flex flex-col lg:w-4/6 xsm:w-full dark:bg-secondaryDark bg-secondaryLight shadow-md rounded-md ml-4 p-4 md:mb-4 xsm:mb-5">
+      <div className="flex flex-col lg:w-4/6 xsm:w-full dark:bg-secondaryDark bg-secondaryLight shadow-md rounded-md ml-4 p-4 md:mb-4 x   xsm:mb-5">
         {cart ? (
           cartItems.map((item) => (
             <CartItem

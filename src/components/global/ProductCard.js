@@ -5,7 +5,7 @@ import AddToCart from "../cart/AddToCart";
 
 const ProductCard = ({ slug, id, title, price, imageURL }) => {
   return (
-    <div key={id} className="product-card ">
+    <div key={id} className="product-card farsi-text">
       <div>
         <Link
           key={`${id}-link`}
@@ -23,11 +23,11 @@ const ProductCard = ({ slug, id, title, price, imageURL }) => {
           </a>
         </Link>
       </div>
-      <div className="mt-2 farsi-text">
-        <p className="text-sm mb-1">{title}</p>
-        <div className="flex items-center">
+      <div className="mt-2">
+        <p className="text-md font-bold mb-1">{title}</p>
+        <div className="flex font-bold items-center dark:text-green-400 text-green-700">
           <p
-            className="ml-1 text-md"
+            className="ml-1 text-lg"
             dangerouslySetInnerHTML={{ __html: price.replace("تومان", "") }}
           ></p>
           <span className="text-sm">تومان</span>

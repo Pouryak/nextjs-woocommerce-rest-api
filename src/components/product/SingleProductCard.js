@@ -26,9 +26,12 @@ const SingleProductCard = ({ data }) => {
           <div className="flex flex-col space-y-3 pr-14 justify-between">
             <div>
               {/* Category */}
-              <p className="text-xsm tracking-wide dark:text-gray-300 text-gray-600">
+              <a
+                href={`/categories/${data.categories[0].name}`}
+                className="text-xsm tracking-wide dark:text-gray-300 text-gray-600 hover:text-green-400 dark:hover:text-green-400"
+              >
                 {data.categories[0].name}
-              </p>
+              </a>
               {/* Persian Title */}
               <div className="pt-3">
                 <h1 className="text-xlg font-bold ">{data.name}</h1>
@@ -62,7 +65,7 @@ const SingleProductCard = ({ data }) => {
           </div>
         </div>
         {/* Features */}
-        <div className="flex flex-col justify-between text-center items-center">
+        {/* <div className="flex flex-col justify-between text-center items-center">
           <div className="flex flex-col items-center justify-center">
             <CiDeliveryTruck fill="green" className="mb-2" size={26} />
             <h3 className="mb-1">ارسال سریع محصول</h3>
@@ -78,7 +81,7 @@ const SingleProductCard = ({ data }) => {
             <h3 className="mb-1">ضمانت بازگشت</h3>
             <p className="text-xsm text-gray-500">هفت روز ضمانت بازگشت</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

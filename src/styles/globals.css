@@ -31,6 +31,9 @@
   .product-details-tab {
     @apply flex justify-center py-2 px-3 rounded-lg cursor-pointer shadow-sm;
   }
+  .box {
+    @apply bg-indigo-700 rounded-lg;
+  }
   .add-cart-button {
     @apply cursor-pointer border border-gray-200 dark:border-secondaryDark mt-2 ml-3 px-3 py-1 dark:hover:bg-shadeDark hover:bg-shadeLight rounded-md;
   }
@@ -60,12 +63,4 @@ html {
 
 body {
   @apply bg-primaryLight dark:bg-primaryDark text-textDark dark:text-textLight;
-}
-
-.box {
-  @apply bg-indigo-700
-		min-w-full
-		h-32
-		min-h-full
-		rounded-lg;
 }

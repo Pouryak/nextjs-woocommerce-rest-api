@@ -42,6 +42,9 @@ export default SingleProduct;
 export async function getStaticProps({ params }) {
   const { data: headerFooterData } = await axios.get(HEADER_FOOTER_ENDPOINT);
   const { data: product } = await getProduct(params.slug);
+  // const { data: productByCat } = await getProductsByCategory(product[0].id);
+
+  // console.log(productByCat);
 
   return {
     props: {
