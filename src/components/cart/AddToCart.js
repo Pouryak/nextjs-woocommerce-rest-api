@@ -3,7 +3,6 @@ import Link from "next/link";
 import LoadingCart from "./LoadingCart";
 import { addToCart } from "../../utils/cart/index";
 import { CartContext } from "../context/cart-context";
-import { IoBagAddOutline } from "react-icons/io5";
 
 function AddToCart({ children, productId }) {
   const [cart, setCart] = useContext(CartContext);

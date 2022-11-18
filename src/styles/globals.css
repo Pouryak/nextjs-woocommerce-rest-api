@@ -35,7 +35,7 @@
     @apply min-h-[600px];
   }
   .box {
-    @apply bg-indigo-700 rounded-lg;
+    @apply border-2 border-green-400 rounded-lg;
   }
   .add-cart-button {
     @apply cursor-pointer border border-gray-200 dark:border-secondaryDark mt-2 ml-3 px-3 py-1 dark:hover:bg-shadeDark hover:bg-shadeLight rounded-md;
@@ -47,7 +47,7 @@
     @apply cursor-pointer border border-gray-200 dark:border-secondaryDark dark:hover:bg-shadeDark hover:bg-shadeLight p-3 rounded-md;
   }
   .feature-box {
-    @apply bg-secondaryLight dark:bg-secondaryDark flex flex-col items-center justify-center text-center py-6 rounded-md shadow-sm w-[20%] hover:scale-105 duration-200;
+    @apply bg-secondaryLight dark:bg-secondaryDark flex flex-col items-center justify-center text-center py-6 rounded-md shadow-sm  hover:scale-105 duration-200 xsm:w-full md:w-[20%] xsm:items-center xsm:justify-center;
   }
   .list-item {
     @apply pr-5;

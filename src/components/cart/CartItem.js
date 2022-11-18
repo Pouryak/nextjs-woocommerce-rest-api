@@ -179,7 +179,7 @@ const CartItem = ({ item, products, setCart }) => {
             <CiCircleRemove className="hover:fill-red-500" size={28} />
           </button>
 
-          <div className="flex">
+          <div className="flex items-center">
             <p className="ml-4">قیمت:</p>
             <div className="text-lg flex dark:text-green-400 text-green-700">
               <div className="ml-2">{item?.line_subtotal}</div>

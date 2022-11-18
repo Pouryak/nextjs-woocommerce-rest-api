@@ -2,7 +2,6 @@ import Link from "next/link";
 import { useContext } from "react";
 import { useTheme } from "next-themes";
 import { CartContext } from "../context/cart-context";
-
 import { MdOutlineLightMode, MdBedtime } from "react-icons/md";
 import { CgMenu } from "react-icons/cg";
 import { ImPhone } from "react-icons/im";

@@ -9,7 +9,7 @@ import {
 
 const Features = () => {
   return (
-    <div className="container mx-auto flex space-x-3 justify-between my-6 pb-8 divider">
+    <div className="container mx-auto flex md:flex-row xsm:flex-col md:space-x-3 md:space-y-0 xsm:space-y-3 xsm:space-x-0 justify-between my-6 pb-8 divider">
       <div className="feature-box">
         <div>
           <CiDeliveryTruck fill="green" className="mb-2" size={26} />
