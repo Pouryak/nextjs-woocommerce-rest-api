@@ -31,10 +31,16 @@
   .product-details-tab {
     @apply flex justify-center py-2 px-3 rounded-lg cursor-pointer shadow-sm;
   }
+  .main-container {
+    @apply min-h-[600px];
+  }
   .box {
     @apply bg-indigo-700 rounded-lg;
   }
   .add-cart-button {
+    @apply cursor-pointer border border-gray-200 dark:border-secondaryDark mt-2 ml-3 px-3 py-1 dark:hover:bg-shadeDark hover:bg-shadeLight rounded-md;
+  }
+  .show-cart-button {
     @apply cursor-pointer border border-gray-200 dark:border-secondaryDark mt-2 ml-3 px-3 py-1 dark:hover:bg-shadeDark hover:bg-shadeLight rounded-md;
   }
   .nav-button {

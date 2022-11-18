@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import AddToCart from "../cart/AddToCart";
+import { IoBagAddOutline } from "react-icons/io5";
 
 const ProductCard = ({ slug, id, title, price, imageURL }) => {
   return (
@@ -32,7 +33,9 @@ const ProductCard = ({ slug, id, title, price, imageURL }) => {
           ></p>
           <span className="text-sm">تومان</span>
         </div>
-        <AddToCart productId={id} />
+        <AddToCart productId={id}>
+          <IoBagAddOutline size={26} />
+        </AddToCart>
       </div>
     </div>
   );

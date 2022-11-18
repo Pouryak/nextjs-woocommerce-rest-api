@@ -104,7 +104,7 @@ const CartItem = ({ item, products, setCart }) => {
       <div className="flex justify-between my-2 p-1 pb-3 divider">
         {/* Image Box */}
         <div className="flex">
-          <div className="ml-5">
+          <div className="ml-5 cursor-pointer">
             <Link href={`/product/${item?.data?.slug}`}>
               <Image
                 src={!isEmpty(productImg?.src) ? productImg.src : ""}

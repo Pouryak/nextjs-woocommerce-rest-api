@@ -1,9 +1,7 @@
 import Link from "next/link";
-import Head from "next/head";
-
 import { useContext } from "react";
-import { CartContext } from "../context/cart-context";
 import { useTheme } from "next-themes";
+import { CartContext } from "../context/cart-context";
 
 import { MdOutlineLightMode, MdBedtime } from "react-icons/md";
 import { CgMenu } from "react-icons/cg";
@@ -21,10 +19,6 @@ const Header = () => {
 
   return (
     <>
-      <Head>
-        <title>Next WooCommerce</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       {/* Desktop/Tablet */}
       <div className="bg-secondaryLight dark:bg-secondaryDark xsm:hidden md:block">
         <div className="container mx-auto pt-4 space-y-4">

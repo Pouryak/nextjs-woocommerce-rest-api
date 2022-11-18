@@ -54,13 +54,17 @@ const SingleProductCard = ({ data }) => {
             </div>
             {/* Add to Cart */}
             <div className="flex justify-between">
-              <button className="flex items-center rounded-md bg-green-500 text-white py-2 px-4 hover:bg-green-700 duration-150">
+              {/* <button className="flex items-center rounded-md bg-green-500 text-white py-2 px-4 hover:bg-green-700 duration-150">
                 <p>افزودن به سبد خرید</p>
                 <IoBagAddSharp />
-              </button>
-              <button className="group rounded-md p-3 border border-gray-500 hover:bg-red-500 duration-150 hover:fill-white">
+              </button> */}
+              <AddToCart productId={data.id}>
+                <p>افزودن به سبد خرید</p>
+                <IoBagAddSharp />
+              </AddToCart>
+              {/* <button className="group rounded-md p-3 border border-gray-500 hover:bg-red-500 duration-150 hover:fill-white">
                 <RiHeartAddLine />
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

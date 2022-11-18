@@ -5,7 +5,7 @@ import { addToCart } from "../../utils/cart/index";
 import { CartContext } from "../context/cart-context";
 import { IoBagAddOutline } from "react-icons/io5";
 
-function AddToCart({ productId }) {
+function AddToCart({ children, productId }) {
   const [cart, setCart] = useContext(CartContext);
   const [isAddedToCart, setIsAddedToCart] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -20,11 +20,13 @@ function AddToCart({ productId }) {
         disabled={isLoading}
       >
         {/* <MdAddCircleOutline size={16} /> */}
-        {isLoading ? <LoadingCart /> : <IoBagAddOutline size={24} />}
+        <a className="flex items-center">
+          {isLoading ? <LoadingCart /> : children}
+        </a>
       </button>
       {isAddedToCart && !isLoading ? (
         <Link href="/cart">
-          <a className="add-cart-button">مشاهده سبد</a>
+          <a className="show-cart-button">مشاهده سبد</a>
         </Link>
       ) : null}
     </div>
