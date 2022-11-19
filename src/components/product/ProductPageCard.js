@@ -54,12 +54,8 @@ const SingleProductCard = ({ data }) => {
             </div>
             {/* Add to Cart */}
             <div className="flex justify-between">
-              {/* <button className="flex items-center rounded-md bg-green-500 text-white py-2 px-4 hover:bg-green-700 duration-150">
-                <p>افزودن به سبد خرید</p>
-                <IoBagAddSharp />
-              </button> */}
-              <AddToCart productId={data.id}>
-                <p>افزودن به سبد خرید</p>
+              <AddToCart className="add-cart-button" productId={data.id}>
+                <p className="ml-2">افزودن به سبد</p>
                 <IoBagAddSharp />
               </AddToCart>
               {/* <button className="group rounded-md p-3 border border-gray-500 hover:bg-red-500 duration-150 hover:fill-white">
@@ -69,7 +65,7 @@ const SingleProductCard = ({ data }) => {
           </div>
         </div>
         {/* Features */}
-        {/* <div className="flex flex-col justify-between text-center items-center">
+        <div className="flex flex-col justify-between text-center items-center">
           <div className="flex flex-col items-center justify-center">
             <CiDeliveryTruck fill="green" className="mb-2" size={26} />
             <h3 className="mb-1">ارسال سریع محصول</h3>
@@ -85,7 +81,7 @@ const SingleProductCard = ({ data }) => {
             <h3 className="mb-1">ضمانت بازگشت</h3>
             <p className="text-xsm text-gray-500">هفت روز ضمانت بازگشت</p>
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   );

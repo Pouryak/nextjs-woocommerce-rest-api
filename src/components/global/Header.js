@@ -5,12 +5,9 @@ import { CartContext } from "../context/cart-context";
 import { MdOutlineLightMode, MdBedtime } from "react-icons/md";
 import { CgMenu } from "react-icons/cg";
 import { ImPhone } from "react-icons/im";
-import {
-  FaShoppingCart,
-  FaUser,
-  FaTelegram,
-  FaInstagram,
-} from "react-icons/fa";
+import { FaTelegram, FaInstagram } from "react-icons/fa";
+import User from "../icons/User";
+import Bag from "../icons/Bag";
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
@@ -25,20 +22,20 @@ const Header = () => {
           <div className="flex justify-between items-center text-sm pb-2 divider">
             {/* <!-- Left nav --> */}
             <div className="flex space-x-4 items-center justify-center text-white">
-              <div className="flex space-x-1 justify-center items-center rounded-md bg-green-500 px-3 py-1">
+              <a className="flex space-x-1 justify-center items-center rounded-md social-links">
                 <ImPhone size={18} />
                 <span className="font-medium">021-123456789</span>
-              </div>
+              </a>
               <a
                 href="https://Instagram.com/pouryak"
-                className="flex space-x-1 justify-center items-center rounded-md bg-red-500 px-3 py-1"
+                className="flex space-x-1 justify-center items-center rounded-md social-links"
               >
                 <FaInstagram size={18} />
                 <span className="font-medium ">Instagram</span>
               </a>
               <a
                 href="https://telegram.com/pouryak"
-                className="flex space-x-1 justify-center items-center rounded-md bg-blue-400 px-3 py-1"
+                className="flex space-x-1 justify-center items-center rounded-md social-links"
               >
                 <FaTelegram size={18} />
                 <span className="font-medium">Telegram</span>
@@ -62,13 +59,13 @@ const Header = () => {
             <div className="flex space-x-4 items-center">
               <Link href="/my-account">
                 <a className="nav-button">
-                  <FaUser />
+                  <User />
                 </a>
               </Link>
 
               <Link href="/cart">
                 <a className="nav-button relative">
-                  <FaShoppingCart />
+                  <Bag />
                   <span className="absolute bg-red-500 text-white rounded-full text-center px-2 -top-3 -right-2">
                     {cart?.totalQty ? `${cart?.totalQty}` : null}
                   </span>
@@ -133,12 +130,12 @@ const Header = () => {
           <div className="flex space-x-4 items-center">
             <Link href="/my-account">
               <a className="nav-button">
-                <FaUser />
+                <User />
               </a>
             </Link>
             <Link href="/cart">
               <a className="nav-button relative">
-                <FaShoppingCart />
+                <Bag />
                 <span className="absolute bg-red-500 rounded-full text-center px-1 -top-3 -right-2">
                   {cart?.totalQty ? `${cart?.totalQty}` : null}
                 </span>

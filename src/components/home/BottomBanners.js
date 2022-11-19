@@ -7,10 +7,18 @@ const BottomBanners = () => {
   return (
     <div className="container mx-auto flex md:flex-row xsm:flex-col xsm:space-x-0 md:space-x-2 xsm:space-y-2 md:space-y-0 mb-6">
       <div>
-        <Image src={BottomBanner1} className="rounded-lg" />
+        <Image
+          src={BottomBanner1}
+          alt="bottom-baner-1"
+          className="rounded-lg"
+        />
       </div>
       <div>
-        <Image src={BottomBanner2} className="rounded-lg" />
+        <Image
+          src={BottomBanner2}
+          alt="bottom-baner-2"
+          className="rounded-lg"
+        />
       </div>
     </div>
   );

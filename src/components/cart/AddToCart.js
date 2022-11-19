@@ -4,7 +4,7 @@ import LoadingCart from "./LoadingCart";
 import { addToCart } from "../../utils/cart/index";
 import { CartContext } from "../context/cart-context";
 
-function AddToCart({ children, productId }) {
+function AddToCart({ children, className = "", productId }) {
   const [cart, setCart] = useContext(CartContext);
   const [isAddedToCart, setIsAddedToCart] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -15,7 +15,7 @@ function AddToCart({ children, productId }) {
         onClick={() =>
           addToCart(productId, 1, setCart, setIsAddedToCart, setIsLoading)
         }
-        className="add-cart-button"
+        className={className}
         disabled={isLoading}
       >
         {/* <MdAddCircleOutline size={16} /> */}

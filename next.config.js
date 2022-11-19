@@ -24,11 +24,11 @@ module.exports = {
   images: {
     domains: [allowedImageWordPressDomain, "via.placeholder.com"],
     remotePatterns: [
-      {
-        protocol: "http",
-        hostname: "**.gravatar.com",
-        pathname: "/avatar/**",
-      },
+      // {
+      //   protocol: "http",
+      //   hostname: "**.gravatar.com",
+      //   pathname: "/avatar/**",
+      // },
     ],
   },
 };

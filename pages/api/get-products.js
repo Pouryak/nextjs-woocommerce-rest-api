@@ -13,10 +13,12 @@ export const getProductsData = async (perPage) => {
   });
 };
 
-export const getProduct = async (slug) => {
+export const getProductBySlug = async (slug) => {
   return await api.get(`products/?slug=${slug}`, {});
 };
 
-export const getProductsByCategory = async (id) => {
-  return await api.get(`products/?categories=${id}`, {});
+export const getProductsByCategory = async (categoriesArray) => {
+  const stringifiedIdArray = categoriesArray.map((cat) => cat.id).toString();
+
+  return await api.get(`products/?category=${stringifiedIdArray}`, {});
 };

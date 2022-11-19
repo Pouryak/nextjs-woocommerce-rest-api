@@ -1,12 +1,11 @@
 import Head from "next/head";
 
-import axios from "axios";
-import { getProduct } from "../api/get-products";
+import { getProductBySlug, getProductsByCategory } from "../api/get-products";
 
 import Main from "../../src/components/layout/Main";
-import SingleProductCard from "../../src/components/product/SingleProductCard";
-import Productslider from "../../src/components/global/ProductSlider";
+import ProductPageCard from "../../src/components/product/ProductPageCard";
 import Details from "../../src/components/product/Details";
+import RelatedProducts from "../../src/components/product/RelatedProducts";
 
 const SingleProduct = ({ product, relatedProducts }) => {
   const productAttributes = product[0].attributes;
@@ -21,17 +20,13 @@ const SingleProduct = ({ product, relatedProducts }) => {
       <Main>
         {/* Main Container */}
         <div className="container mx-auto">
-          <SingleProductCard data={product[0]} />
+          <ProductPageCard data={product[0]} />
           <Details
             details={productAttributes}
             description={productDescription}
             comments={productComments}
           />
-          {/* Related Products */}
-          <div className="mt-6">
-            <h2 className="farsi-text">محصولات مشابه</h2>
-            {/* <Productslider data={relatedProducts} /> */}
-          </div>
+          <RelatedProducts data={relatedProducts} />
         </div>
       </Main>
     </>
@@ -41,16 +36,20 @@ const SingleProduct = ({ product, relatedProducts }) => {
 export default SingleProduct;
 
 export async function getStaticProps({ params }) {
-  const { data: product } = await getProduct(params.slug);
+  const { data: product } = await getProductBySlug(params.slug);
+  const categories = product[0].categories;
+  const { data: relatedProducts } = await getProductsByCategory(categories);
 
   return {
     props: {
       product,
-      // relatedProducts: relatedProducts || null,
+      relatedProducts,
     },
+    revalidate: 60,
   };
 }
 
+// get related products inside here
 export async function getStaticPaths() {
   const paths = [];
   return {

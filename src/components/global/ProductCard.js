@@ -28,14 +28,16 @@ const ProductCard = ({ slug, id, title, price, imageURL }) => {
         <p className="text-md font-bold mb-1">{title}</p>
         <div className="flex font-bold items-center dark:text-green-400 text-green-700">
           <p
-            className="ml-1 text-lg"
+            className="ml-1 text-lg font-vazir"
             dangerouslySetInnerHTML={{ __html: price.replace("تومان", "") }}
           ></p>
           <span className="text-sm">تومان</span>
         </div>
-        <AddToCart productId={id}>
-          <IoBagAddOutline size={26} />
-        </AddToCart>
+        <div className="mt-3">
+          <AddToCart className="add-cart-single" productId={id}>
+            <IoBagAddOutline size={26} />
+          </AddToCart>
+        </div>
       </div>
     </div>
   );

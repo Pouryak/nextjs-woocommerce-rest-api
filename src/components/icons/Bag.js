@@ -7,7 +7,7 @@ function SvgBag(props) {
       fill="none"
       viewBox="0 0 24 24"
       width={18}
-      height="auto"
+      height={18}
       stroke="currentColor"
       {...props}
     >

@@ -30,6 +30,7 @@ module.exports = {
       },
       fontFamily: {
         vazir: ["Vazir"],
+        shabnam: ["Shabnam"],
       },
       fontSize: {
         xsm: "0.725rem",

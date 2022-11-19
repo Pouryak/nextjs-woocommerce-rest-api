@@ -10,7 +10,7 @@ const Baner = () => {
             <a className="font-bold text-xlg text-center">Site Baner</a>
           </div>
         </div>
-        <Image src={Baner1} className="rounded-lg md:w-3/6" />
+        <Image alt="top-baner-1" src={Baner1} className="rounded-lg md:w-3/6" />
       </div>
     </div>
   );

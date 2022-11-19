@@ -12,6 +12,7 @@ const Details = ({ details, description, comments }) => {
           {comments?.nodes?.length ? (
             comments.nodes.map((com) => (
               <Comment
+                key={com.id}
                 name={com.author.node.name}
                 avatar={com.author.node.avatar.url}
                 content={com.content}
@@ -52,13 +53,13 @@ const Details = ({ details, description, comments }) => {
   }
 
   return (
-    <div>
+    <div className="mb-4">
       <div className="flex justify-end space-x-4 text-center items-center pb-2">
         <div
           onClick={() => setActiveTab("reviews")}
           className={`product-details-tab ${
             activeTab === "reviews"
-              ? "bg-green-400 text-white"
+              ? "bg-green-500 text-white"
               : "bg-secondaryLight dark:bg-secondaryDark"
           }`}
         >
@@ -68,7 +69,7 @@ const Details = ({ details, description, comments }) => {
           onClick={() => setActiveTab("info")}
           className={`product-details-tab ${
             activeTab === "info"
-              ? "bg-green-400 text-white"
+              ? "bg-green-500 text-white"
               : "bg-secondaryLight dark:bg-secondaryDark"
           }`}
         >
@@ -78,7 +79,7 @@ const Details = ({ details, description, comments }) => {
           onClick={() => setActiveTab("details")}
           className={`product-details-tab ${
             activeTab === "details"
-              ? "bg-green-400 text-white"
+              ? "bg-green-500 text-white"
               : "bg-secondaryLight dark:bg-secondaryDark"
           }`}
         >
