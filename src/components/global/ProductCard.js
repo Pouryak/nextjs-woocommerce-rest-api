@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import AddToCart from "../cart/AddToCart";
-import { IoAddCircleOutline } from "react-icons/io5";
+import { IoBagAddOutline } from "react-icons/io5";
 
 const ProductCard = ({ slug, id, title, price, imageURL }) => {
   return (
@@ -35,7 +35,7 @@ const ProductCard = ({ slug, id, title, price, imageURL }) => {
         </div>
         <div className="mt-3">
           <AddToCart className="add-cart-single" productId={id}>
-            <IoBagAddOutline size={26} />
+            <IoBagAddOutline size={24} />
           </AddToCart>
         </div>
       </div>

@@ -24,17 +24,17 @@ const Header = () => {
           <div className="flex justify-between items-center text-sm pb-2 divider">
             {/* <!-- Left nav --> */}
             <div className="flex space-x-4 items-center justify-center text-white">
-              <div className="social-links">
+              <a className="social-links">
                 <ImPhone size={18} />
-                <span className="font-medium">021-123456789</span>
-              </div>
-              <a href="https://Instagram.com/pouryak" className=" social-links">
+                <span className="font-medium ml-1">021-123456789</span>
+              </a>
+              <a href="https://Instagram.com/pouryak" className="social-links">
                 <FaInstagram size={18} />
-                <span className="font-medium ">Instagram</span>
+                <span className="font-medium ml-1">Instagram</span>
               </a>
               <a href="https://telegram.com/pouryak" className="social-links">
                 <FaTelegram size={18} />
-                <span className="font-medium">Telegram</span>
+                <span className="font-medium ml-1">Telegram</span>
               </a>
             </div>
             {/* <!-- Right nav --> */}

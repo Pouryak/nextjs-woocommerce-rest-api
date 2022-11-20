@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import "../src/styles/globals.css";
-import { CartContextProvider } from "../src/components/context/cart-context";
-
 import { ThemeProvider } from "next-themes";
+
+import { CartContextProvider } from "../src/components/context/cart-context";
 import LoadingSpinner from "../src/components/global/LoadingSpinner";
 
 function MyApp({ Component, pageProps }) {

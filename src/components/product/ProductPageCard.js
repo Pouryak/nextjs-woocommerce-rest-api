@@ -1,6 +1,5 @@
-import React from "react";
-import Image from "next/image";
 import AddToCart from "../cart/AddToCart";
+import ImageMagnifier from "./ImageMagnifier";
 
 import { CiDeliveryTruck, CiStar, CiCalendar } from "react-icons/ci";
 import { RiHeartAddLine } from "react-icons/ri";
@@ -14,7 +13,7 @@ const SingleProductCard = ({ data }) => {
         <div className="flex">
           {/* Image */}
           <div className="z-0">
-            <Image
+            <ImageMagnifier
               src={data.images[0].src}
               height={350}
               width={350}

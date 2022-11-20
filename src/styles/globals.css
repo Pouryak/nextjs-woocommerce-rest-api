@@ -5,8 +5,8 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: Shabnam;
-  src: url("../fonts/Shabnam.ttf") format("truetype");
+  font-family: Vazir;
+  src: url("../fonts/Vazir.ttf") format("truetype");
 }
 
 @layer utilities {
@@ -73,7 +73,7 @@
     @apply cursor-pointer border border-gray-200 dark:border-secondaryDark dark:hover:bg-shadeDark hover:bg-shadeLight p-3 rounded-md;
   }
   .social-links {
-    @apply cursor-pointer px-2 py-1 text-gray-800 dark:text-white border border-gray-200 dark:border-secondaryDark dark:hover:bg-shadeDark hover:bg-shadeLight rounded-md;
+    @apply flex cursor-pointer px-2 py-1 text-gray-800 dark:text-white border border-gray-200 dark:border-secondaryDark dark:hover:bg-shadeDark hover:bg-shadeLight rounded-md;
   }
   .feature-box {
     @apply bg-secondaryLight dark:bg-secondaryDark flex flex-col items-center justify-center text-center py-6 rounded-md shadow-sm  hover:scale-105 duration-200 xsm:w-full md:w-[20%] xsm:items-center xsm:justify-center;
@@ -93,5 +93,5 @@
 }
 
 body {
-  @apply font-shabnam bg-primaryLight dark:bg-primaryDark text-textDark dark:text-textLight;
+  @apply font-vazir bg-primaryLight dark:bg-primaryDark text-textDark dark:text-textLight;
 }
