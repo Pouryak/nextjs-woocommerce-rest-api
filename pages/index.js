@@ -1,7 +1,7 @@
 import { getProductsData } from "./api/get-products";
 
 import Main from "../src/components/layout/Main";
-import Baner from "../src/components/home/BanerCarousel";
+import Baner from "../src/components/home/TopSlider/Slide";
 import Features from "../src/components/home/Features";
 import SpecialOffers from "../src/components/home/SpecialOffers";
 import Categories from "../src/components/home/Categories";

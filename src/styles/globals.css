@@ -33,7 +33,7 @@
     width: 110px;
     text-align: center;
     border-radius: 5px;
-    top: calc(100% + 10px);
+    top: calc(100% + 8px);
     right: -40%;
     display: none;
   }

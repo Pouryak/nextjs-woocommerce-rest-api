@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import AddToCart from "../cart/AddToCart";
+import Tooltip from "../cart/AddToCartTooltip";
 import { IoBagAddOutline } from "react-icons/io5";
 
 const ProductCard = ({ slug, id, title, price, imageURL }) => {
@@ -34,7 +35,11 @@ const ProductCard = ({ slug, id, title, price, imageURL }) => {
           <span className="text-sm">تومان</span>
         </div>
         <div className="mt-3">
-          <AddToCart className="add-cart-single" productId={id}>
+          <AddToCart
+            showTooltip={true}
+            className="add-cart-single"
+            productId={id}
+          >
             <IoBagAddOutline size={24} />
           </AddToCart>
         </div>

@@ -35,7 +35,7 @@ const SingleProduct = ({ product, relatedProducts }) => {
 
 export default SingleProduct;
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const { data: product } = await getProductBySlug(params.slug);
   const categories = product[0].categories;
   const { data: relatedProducts } = await getProductsByCategory(categories);
@@ -45,15 +45,5 @@ export async function getStaticProps({ params }) {
       product,
       relatedProducts,
     },
-    revalidate: 60,
-  };
-}
-
-// get related products inside here
-export async function getStaticPaths() {
-  const paths = [];
-  return {
-    paths,
-    fallback: "blocking",
   };
 }

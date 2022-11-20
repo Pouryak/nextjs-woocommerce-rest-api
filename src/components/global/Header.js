@@ -85,7 +85,7 @@ const Header = () => {
               placeholder="کالاتو جستجو کن"
             />
             <Link href="/">
-              <a className="website-logo text-3xl dark:text-white text-gray-800  justify-self-end">
+              <a className="website-logo text-3xl dark:text-white text-gray-800 justify-self-end">
                 SiteTitle
               </a>
             </Link>
