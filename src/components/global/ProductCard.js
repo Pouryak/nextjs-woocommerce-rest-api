@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import AddToCart from "../cart/AddToCart";
-import { IoBagAddOutline } from "react-icons/io5";
+import { IoAddCircleOutline } from "react-icons/io5";
 
 const ProductCard = ({ slug, id, title, price, imageURL }) => {
   return (
@@ -15,7 +15,7 @@ const ProductCard = ({ slug, id, title, price, imageURL }) => {
         >
           <a>
             <Image
-              className="border rounded-md cursor-pointer"
+              className="border rounded-sm cursor-pointer"
               src={imageURL}
               width={220}
               height={220}
@@ -33,8 +33,9 @@ const ProductCard = ({ slug, id, title, price, imageURL }) => {
           ></p>
           <span className="text-sm">تومان</span>
         </div>
-        <AddToCart productId={id}>
-          <IoBagAddOutline size={26} />
+
+        <AddToCart className="add-cart-button border-gray-300" productId={id}>
+          <IoAddCircleOutline size={26} />
         </AddToCart>
       </div>
     </div>

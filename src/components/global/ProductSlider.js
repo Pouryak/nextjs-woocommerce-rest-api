@@ -31,7 +31,7 @@ const ProductSlider = ({ data }) => {
         }}
       >
         {data.map((product) => (
-          <SwiperSlide key={product.id}>
+          <SwiperSlide key={product.id} className="py-12">
             <ProductCard
               slug={product.slug}
               id={product.id}

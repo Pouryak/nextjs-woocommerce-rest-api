@@ -4,6 +4,8 @@ import { useTheme } from "next-themes";
 import { CartContext } from "../context/cart-context";
 import { MdOutlineLightMode, MdBedtime } from "react-icons/md";
 import { CgMenu } from "react-icons/cg";
+import { BsHandbag } from "react-icons/bs";
+import { CiUser, CiShoppingCart } from "react-icons/ci";
 import { ImPhone } from "react-icons/im";
 import {
   FaShoppingCart,
@@ -25,21 +27,15 @@ const Header = () => {
           <div className="flex justify-between items-center text-sm pb-2 divider">
             {/* <!-- Left nav --> */}
             <div className="flex space-x-4 items-center justify-center text-white">
-              <div className="flex space-x-1 justify-center items-center rounded-md bg-green-500 px-3 py-1">
+              <div className="social-links">
                 <ImPhone size={18} />
                 <span className="font-medium">021-123456789</span>
               </div>
-              <a
-                href="https://Instagram.com/pouryak"
-                className="flex space-x-1 justify-center items-center rounded-md bg-red-500 px-3 py-1"
-              >
+              <a href="https://Instagram.com/pouryak" className=" social-links">
                 <FaInstagram size={18} />
                 <span className="font-medium ">Instagram</span>
               </a>
-              <a
-                href="https://telegram.com/pouryak"
-                className="flex space-x-1 justify-center items-center rounded-md bg-blue-400 px-3 py-1"
-              >
+              <a href="https://telegram.com/pouryak" className="social-links">
                 <FaTelegram size={18} />
                 <span className="font-medium">Telegram</span>
               </a>
@@ -62,13 +58,13 @@ const Header = () => {
             <div className="flex space-x-4 items-center">
               <Link href="/my-account">
                 <a className="nav-button">
-                  <FaUser />
+                  <CiUser size={18} />
                 </a>
               </Link>
 
               <Link href="/cart">
                 <a className="nav-button relative">
-                  <FaShoppingCart />
+                  <BsHandbag size={18} />
                   <span className="absolute bg-red-500 text-white rounded-full text-center px-2 -top-3 -right-2">
                     {cart?.totalQty ? `${cart?.totalQty}` : null}
                   </span>
@@ -78,7 +74,11 @@ const Header = () => {
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 className="nav-button"
               >
-                {theme === "dark" ? <MdBedtime /> : <MdOutlineLightMode />}
+                {theme === "dark" ? (
+                  <MdBedtime size={18} />
+                ) : (
+                  <MdOutlineLightMode size={18} />
+                )}
               </a>
             </div>
             {/* Search Input */}

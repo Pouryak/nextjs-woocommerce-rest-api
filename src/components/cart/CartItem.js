@@ -106,12 +106,14 @@ const CartItem = ({ item, products, setCart }) => {
         <div className="flex">
           <div className="ml-5 cursor-pointer">
             <Link href={`/product/${item?.data?.slug}`}>
-              <Image
-                src={!isEmpty(productImg?.src) ? productImg.src : ""}
-                width={180}
-                height={180}
-                className="rounded-md"
-              />
+              <a>
+                <Image
+                  src={!isEmpty(productImg?.src) ? productImg.src : ""}
+                  width={180}
+                  height={180}
+                  className="rounded-md"
+                />
+              </a>
             </Link>
           </div>
           {/* Details Box */}
