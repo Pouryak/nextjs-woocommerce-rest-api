@@ -54,13 +54,10 @@ const SingleProductCard = ({ data }) => {
             </div>
             {/* Add to Cart */}
             <div className="flex justify-between">
-              <AddToCart className="add-cart-button" productId={data.id}>
-                <p className="ml-2">افزودن به سبد</p>
+              <AddToCart className="add-cart-single" productId={data.id}>
+                <p>افزودن به سبد</p>
                 <IoBagAddSharp />
               </AddToCart>
-              {/* <button className="group rounded-md p-3 border border-gray-500 hover:bg-red-500 duration-150 hover:fill-white">
-                <RiHeartAddLine />
-              </button> */}
             </div>
           </div>
         </div>

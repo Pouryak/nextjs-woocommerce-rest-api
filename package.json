@@ -4,7 +4,7 @@
   "private": true,
   "author": "Pouryak",
   "scripts": {
-    "dev": "NODE_OPTIONS='--inspect' next dev -p 8888",
+    "dev": "NODE_OPTIONS='--inspect' next dev -p 4444",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

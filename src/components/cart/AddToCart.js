@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import Link from "next/link";
 import LoadingCart from "./LoadingCart";
+import Tooltip from "./AddToCartTooltip";
 import { addToCart } from "../../utils/cart/index";
 import { CartContext } from "../context/cart-context";
 
@@ -10,24 +11,27 @@ function AddToCart({ children, className = "", productId }) {
   const [isLoading, setIsLoading] = useState(false);
 
   return (
-    <div className="flex">
-      <button
-        onClick={() =>
-          addToCart(productId, 1, setCart, setIsAddedToCart, setIsLoading)
-        }
-        className={className}
-        disabled={isLoading}
-      >
-        {/* <MdAddCircleOutline size={16} /> */}
-        <a className="flex items-center">
-          {isLoading ? <LoadingCart /> : children}
-        </a>
+    <div className="flex mt-2 items-center">
+      <Tooltip text="افزودن به سبد">
+        <button
+          onClick={() =>
+            addToCart(productId, 1, setCart, setIsAddedToCart, setIsLoading)
+          }
+          className={className}
+          disabled={isLoading}
+        >
+          <a className="flex items-center">
+            {isLoading ? <LoadingCart /> : children}
+          </a>
+        </button>
+      </Tooltip>
+      <button>
+        {isAddedToCart && !isLoading ? (
+          <Link href="/cart">
+            <a className="show-cart-button">مشاهده سبد</a>
+          </Link>
+        ) : null}
       </button>
-      {isAddedToCart && !isLoading ? (
-        <Link href="/cart">
-          <a className="show-cart-button">مشاهده سبد</a>
-        </Link>
-      ) : null}
     </div>
   );
 }
