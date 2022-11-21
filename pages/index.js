@@ -7,6 +7,7 @@ import SpecialOffers from "../src/components/home/SpecialOffers";
 import Categories from "../src/components/home/Categories";
 import NewProducts from "../src/components/home/NewProducts";
 import BottomBanners from "../src/components/home/BottomBanners";
+import BlogSection from "../src/components/home/BlogSection";
 
 export default function Home({ products }) {
   return (
@@ -17,6 +18,7 @@ export default function Home({ products }) {
         <SpecialOffers data={products} />
         <Categories />
         <NewProducts data={products} />
+        {/* <BlogSection /> */}
         <BottomBanners />
       </Main>
     </>

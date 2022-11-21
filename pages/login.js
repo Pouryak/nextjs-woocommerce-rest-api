@@ -2,7 +2,7 @@ import React from "react";
 
 const Login = () => {
   return (
-    <div className="absolute left-[50%] top-[50%] -ml-[120px] -mt-[190px]">
+    <div className="absolute left-[50%] top-[50%] -ml-[150px] -mt-[190px]">
       <div className="flex flex-col max-w-[480px] max-h-[380px] px-4 py-8 bg-white rounded-lg shadow dark:bg-gray-800 sm:px-6 md:px-8 lg:px-10">
         <div className="self-center mb-6 text-xl font-light text-gray-600 sm:text-2xl dark:text-white">
           Login To Your Account

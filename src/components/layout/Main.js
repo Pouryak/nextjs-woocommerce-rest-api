@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Header from "../global/Header";
 import Footer from "../global/Footer";
+import NewHeader from "../global/newHeader";
 
 const Main = ({ children }) => {
   return (

@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer className="bg-secondaryLight dark:bg-secondaryDark p-4 ">
       {/* Main container */}
-      <div className="container mx-auto flex md:flex-row md:text-right xsm:flex-col xsm:text-center xsm:space-y-8 justify-between md:py-16 xsm:py-8">
+      <div className="container mx-auto flex md:flex-row md:text-right xsm:flex-col xsm:text-center xsm:space-y-8 justify-between py-10 ">
         {/* Logos */}
         <div className="flex space-x-4 justify-center">
           <div className="border border-gray-200 dark:border-secondaryDark rounded-md p-2 grow-0 h-fit">

@@ -21,8 +21,8 @@ const Header = () => {
       <div className="bg-secondaryLight dark:bg-secondaryDark xsm:hidden md:block">
         <div className="container mx-auto pt-4 space-y-4">
           {/* <!-- Upper Nav --> */}
-          <div className="flex justify-between items-center text-sm pb-2 divider">
-            {/* <!-- Left nav --> */}
+          {/* <div className="flex justify-between items-center text-sm pb-2 divider">
+            
             <div className="flex space-x-4 items-center justify-center text-white">
               <a className="social-links">
                 <ImPhone size={18} />
@@ -37,7 +37,7 @@ const Header = () => {
                 <span className="font-medium ml-1">Telegram</span>
               </a>
             </div>
-            {/* <!-- Right nav --> */}
+            
             <div className="flex space-x-4">
               <Link href="/blog">
                 <a className="cursor-pointer footer-item">بلاگ</a>
@@ -49,13 +49,14 @@ const Header = () => {
                 <a className="cursor-pointer footer-item">تماس با ما</a>
               </Link>
             </div>
-          </div>
+          </div> */}
           {/* <!-- Lower Nav --> */}
           <div className="flex xsm:flex-col md:flex-row md:space-x-6 md:space-y-0 xsm:space-y-4 xsm:space-x-0 items-center justify-between">
             <div className="flex space-x-4 items-center">
               <Link href="/my-account">
-                <a className="nav-button">
-                  <CiUser size={18} />
+                <a className="nav-button text-sm">
+                  {/* <CiUser size={18} /> */}
+                  ورود / ثبت نام
                 </a>
               </Link>
 
