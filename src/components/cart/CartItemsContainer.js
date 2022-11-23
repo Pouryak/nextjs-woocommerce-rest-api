@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { useRouter } from "next/router";
 import EmptyCart from "./EmptyCart";
 import { CartContext } from "../context/cart-context";
 import { clearCart } from "../../utils/cart";
@@ -8,6 +9,7 @@ const CartItemsContainer = () => {
   const [cart, setCart] = useContext(CartContext);
   const { cartItems, totalPrice, totalQty } = cart || {};
   const [isClearCartProcessing, setClearCartProcessing] = useState(false);
+  const router = useRouter();
 
   const handleClearCart = (event) => {
     event.stopPropagation();
@@ -53,7 +55,10 @@ const CartItemsContainer = () => {
           <p>وابسته به آدرس</p>
         </div>
         <div className="divider" />
-        <button className="bg-green-500 px-4 py-2 rounded-md text-white hover:shadow-sm hover:scale-105 duration-200">
+        <button
+          onClick={() => router.push("/checkout")}
+          className="bg-green-500 px-4 py-2 rounded-md text-white hover:shadow-sm hover:scale-105 duration-200"
+        >
           ادامه ثبت سفارش
         </button>
         {/* <button

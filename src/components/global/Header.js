@@ -5,9 +5,6 @@ import { CartContext } from "../context/cart-context";
 import { MdOutlineLightMode, MdBedtime } from "react-icons/md";
 import { CgMenu } from "react-icons/cg";
 import { BsHandbag } from "react-icons/bs";
-import { CiUser, CiShoppingCart } from "react-icons/ci";
-import { ImPhone } from "react-icons/im";
-import { FaTelegram, FaInstagram } from "react-icons/fa";
 import User from "../icons/User";
 import Bag from "../icons/Bag";
 
@@ -20,40 +17,9 @@ const Header = () => {
       {/* Desktop/Tablet */}
       <div className="bg-secondaryLight dark:bg-secondaryDark xsm:hidden md:block">
         <div className="container mx-auto pt-4 space-y-4">
-          {/* <!-- Upper Nav --> */}
-          {/* <div className="flex justify-between items-center text-sm pb-2 divider">
-            
-            <div className="flex space-x-4 items-center justify-center text-white">
-              <a className="social-links">
-                <ImPhone size={18} />
-                <span className="font-medium ml-1">021-123456789</span>
-              </a>
-              <a href="https://Instagram.com/pouryak" className="social-links">
-                <FaInstagram size={18} />
-                <span className="font-medium ml-1">Instagram</span>
-              </a>
-              <a href="https://telegram.com/pouryak" className="social-links">
-                <FaTelegram size={18} />
-                <span className="font-medium ml-1">Telegram</span>
-              </a>
-            </div>
-            
-            <div className="flex space-x-4">
-              <Link href="/blog">
-                <a className="cursor-pointer footer-item">بلاگ</a>
-              </Link>
-              <Link href="/about-us">
-                <a className="cursor-pointer footer-item">درباره ما</a>
-              </Link>
-              <Link href="/contact-us">
-                <a className="cursor-pointer footer-item">تماس با ما</a>
-              </Link>
-            </div>
-          </div> */}
-          {/* <!-- Lower Nav --> */}
           <div className="flex xsm:flex-col md:flex-row md:space-x-6 md:space-y-0 xsm:space-y-4 xsm:space-x-0 items-center justify-between">
             <div className="flex space-x-4 items-center">
-              <Link href="/my-account">
+              <Link href="/login">
                 <a className="nav-button text-sm">
                   {/* <CiUser size={18} /> */}
                   ورود / ثبت نام

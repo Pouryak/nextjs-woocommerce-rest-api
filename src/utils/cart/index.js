@@ -1,7 +1,7 @@
 import { getSession, storeSession } from "./session";
 import { getApiCartConfig } from "./api";
 import axios from "axios";
-import { CART_ENDPOINT } from "../constants/endpoints";
+import { CART_ENDPOINT } from "../endpoints";
 import { isEmpty, isArray } from "lodash";
 
 /**
