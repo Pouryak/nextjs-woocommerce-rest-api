@@ -21,8 +21,9 @@ module.exports = {
         textDark: "#1a202c",
         textLight: "rgb(255, 255, 255, 0.92)",
         greenAccent: "#96f2d7",
-        shadeLight: "#ECECEC",
+        shadeLight: "#f1f3f5",
         shadeDark: "#202a37",
+        hoverLight: "#dee2e6",
       },
       fontFamily: {
         vazir: ["Vazir"],

@@ -6,6 +6,7 @@ export default withSession(async (req, res) => {
   const user = req.session.get("user");
   const aTIndex = process.env.ACCESS_TOKEN_INDEX_IN_SERVER_AUTH_JSON_RESPONSE;
   const rtIndex = process.env.REFRESH_TOKEN_INDEX_IN_SERVER_AUTH_JSON_RESPONSE;
+
   if (user) {
     // in a real world application you might read the user id from the session and then do a database request
     // to get more information on the user if needed

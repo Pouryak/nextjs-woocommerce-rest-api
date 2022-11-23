@@ -70,13 +70,13 @@
     @apply cursor-pointer border border-gray-200 dark:border-secondaryDark px-3 py-1 dark:hover:bg-shadeDark hover:bg-shadeLight rounded-md;
   }
   .nav-button {
-    @apply cursor-pointer border border-gray-300 dark:border-secondaryDark dark:hover:bg-shadeDark hover:bg-gray-300 p-3 rounded-md;
+    @apply cursor-pointer border border-gray-300 dark:border-secondaryDark dark:hover:bg-shadeDark hover:bg-hoverLight p-3 rounded-md;
   }
   .social-links {
     @apply flex cursor-pointer px-2 py-1 text-gray-800 dark:text-white border border-gray-200 dark:border-secondaryDark dark:hover:bg-shadeDark hover:bg-shadeLight rounded-md;
   }
   .menu-items {
-    @apply px-5 py-1 rounded-md hover:bg-gray-300 dark:hover:bg-shadeDark duration-150;
+    @apply px-5 py-2 rounded-md hover:bg-hoverLight dark:hover:bg-shadeDark duration-150;
   }
   .feature-box {
     @apply bg-secondaryLight dark:bg-secondaryDark flex flex-col items-center justify-center text-center py-6 rounded-md shadow-sm  hover:scale-105 duration-200 xsm:w-full md:w-[20%] xsm:items-center xsm:justify-center;

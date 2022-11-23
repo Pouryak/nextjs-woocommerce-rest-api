@@ -1,16 +1,16 @@
 import { useState } from "react";
+
 import useUser from "../lib/useUser";
 import Form from "../src/components/Form";
 import fetchJson from "../lib/fetchJson";
 
 const Login = () => {
-  const { mutateUser } = useUser({
-    redirectTo: "/my-account",
+  const { user, mutateUser } = useUser({
+    redirectTo: "/",
     redirectIfFound: true,
   });
 
   const [errorMsg, setErrorMsg] = useState("");
-
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -31,7 +31,7 @@ const Login = () => {
         })
       );
     } catch (errors) {
-      console.error("An unexpected error happened:", error);
+      console.error("An unexpected error happened:", errors);
       setErrorMsg(errors.message);
     }
   }

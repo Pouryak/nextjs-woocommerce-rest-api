@@ -1,14 +1,20 @@
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import useUser from "../lib/useUser";
 import Main from "../src/components/layout/Main";
 
 const MyAccount = () => {
-  const { user } = useUser({ redirectTo: "/login" });
+  const { user } = useUser({
+    redirectTo: "/my-account",
+    redirectIfFound: true,
+  });
   const router = useRouter();
 
-  if (!user || user.isLoggedIn === false) {
-    router.push("/login");
-  }
+  useEffect(() => {
+    if (!user || user.isLoggedIn === false) {
+      router.push("/login");
+    }
+  }, [user]);
 
   return (
     <Main>

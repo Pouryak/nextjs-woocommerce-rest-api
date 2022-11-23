@@ -19,17 +19,18 @@ const Header = () => {
       <div className="bg-primaryLight dark:bg-primaryDark xsm:hidden md:block">
         <div className="container mx-auto pt-4 space-y-4">
           <div className="flex xsm:flex-col md:flex-row md:space-x-6 md:space-y-0 xsm:space-y-4 xsm:space-x-0 items-center justify-between">
+            <Link href="/">
+              <a className="website-logo text-3xl dark:text-white text-gray-800 justify-self-end">
+                SiteTitle
+              </a>
+            </Link>
+            {/* Search Input */}
+            <input
+              className="rounded-md py-2 px-4 bg-gray-100 dark:bg-shadeDark focus:outline-none border border-gray-300 dark:border-secondaryDark placeholder:text-right grow farsi-text max-w-[600px]"
+              type="search"
+              placeholder="کالاتو جستجو کن"
+            />
             <div className="flex space-x-4 items-center">
-              <LoginButton />
-
-              <Link href="/cart">
-                <a className="nav-button relative">
-                  <BsHandbag size={18} />
-                  <span className="absolute bg-red-500 text-white rounded-full text-center px-2 -top-3 -right-2">
-                    {cart?.totalQty ? `${cart?.totalQty}` : null}
-                  </span>
-                </a>
-              </Link>
               <a
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 className="nav-button"
@@ -40,18 +41,16 @@ const Header = () => {
                   <MdOutlineLightMode size={18} />
                 )}
               </a>
+              <Link href="/cart">
+                <a className="nav-button relative">
+                  <BsHandbag size={18} />
+                  <span className="absolute bg-red-500 text-white rounded-full text-center px-2 -top-3 -right-2">
+                    {cart?.totalQty ? `${cart?.totalQty}` : null}
+                  </span>
+                </a>
+              </Link>
+              <LoginButton />
             </div>
-            {/* Search Input */}
-            <input
-              className="rounded-md py-2 px-4 bg-gray-100 dark:bg-shadeDark focus:outline-none border border-gray-300 dark:border-secondaryDark placeholder:text-right grow farsi-text max-w-[600px]"
-              type="search"
-              placeholder="کالاتو جستجو کن"
-            />
-            <Link href="/">
-              <a className="website-logo text-3xl dark:text-white text-gray-800 justify-self-end">
-                SiteTitle
-              </a>
-            </Link>
           </div>
           {/* Navbar */}
           <nav className="">
