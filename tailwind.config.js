@@ -15,22 +15,17 @@ module.exports = {
     extend: {
       colors: {
         primaryLight: "#e9ecef",
-        primaryDark: "rgb(32, 32, 35)",
+        primaryDark: "#111720",
         secondaryLight: "#f8f9fa",
-        secondaryDark: "rgba(225, 225, 225, 0.08)",
+        secondaryDark: "#202a37",
         textDark: "#1a202c",
         textLight: "rgb(255, 255, 255, 0.92)",
         greenAccent: "#96f2d7",
-        purpleAccent: "rgb(255, 99, 195)",
-        glass: "rgba(32, 32, 35, 0.02)",
-        hoverLight: "rgba(154, 230, 180, 0.16)",
-        hoverDark: "rgba(35, 107, 83, 0.240)",
         shadeLight: "#ECECEC",
-        shadeDark: "#444445",
+        shadeDark: "#202a37",
       },
       fontFamily: {
         vazir: ["Vazir"],
-        shabnam: ["Shabnam"],
       },
       fontSize: {
         xsm: "0.725rem",

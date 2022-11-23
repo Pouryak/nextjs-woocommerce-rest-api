@@ -7,6 +7,7 @@ import { CgMenu } from "react-icons/cg";
 import { BsHandbag } from "react-icons/bs";
 import User from "../icons/User";
 import Bag from "../icons/Bag";
+import LoginButton from "./LoginButton";
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
@@ -15,16 +16,11 @@ const Header = () => {
   return (
     <>
       {/* Desktop/Tablet */}
-      <div className="bg-secondaryLight dark:bg-secondaryDark xsm:hidden md:block">
+      <div className="bg-primaryLight dark:bg-primaryDark xsm:hidden md:block">
         <div className="container mx-auto pt-4 space-y-4">
           <div className="flex xsm:flex-col md:flex-row md:space-x-6 md:space-y-0 xsm:space-y-4 xsm:space-x-0 items-center justify-between">
             <div className="flex space-x-4 items-center">
-              <Link href="/login">
-                <a className="nav-button text-sm">
-                  {/* <CiUser size={18} /> */}
-                  ورود / ثبت نام
-                </a>
-              </Link>
+              <LoginButton />
 
               <Link href="/cart">
                 <a className="nav-button relative">
@@ -47,7 +43,7 @@ const Header = () => {
             </div>
             {/* Search Input */}
             <input
-              className="rounded-md py-2 px-4 focus:outline-none border border-gray-200 dark:border-secondaryDark placeholder:text-right grow farsi-text max-w-[600px]"
+              className="rounded-md py-2 px-4 bg-gray-100 dark:bg-shadeDark focus:outline-none border border-gray-300 dark:border-secondaryDark placeholder:text-right grow farsi-text max-w-[600px]"
               type="search"
               placeholder="کالاتو جستجو کن"
             />
@@ -61,27 +57,27 @@ const Header = () => {
           <nav className="">
             <div className="flex farsi-text text-right">
               {/* Main page */}
-              <div className="px-5 py-1 dark:hover:bg-shadeDark hover:bg-shadeLight duration-150">
+              <div className="menu-items">
                 <Link href="/">
                   <a>صفحه اصلی</a>
                 </Link>
               </div>
-              <div className="px-5 py-1 dark:hover:bg-shadeDark hover:bg-shadeLight duration-150">
+              <div className="menu-items">
                 <Link href="/categories/computer-and-parts">
                   <a>کامپیوتر و تجهیزات</a>
                 </Link>
               </div>
-              <div className="px-5 py-1 dark:hover:bg-shadeDark hover:bg-shadeLight duration-150">
+              <div className="menu-items">
                 <Link href="/categories/laptop-and-accessories">
                   <a>لپ تاپ و قطعات</a>
                 </Link>
               </div>
-              <div className="px-5 py-1 dark:hover:bg-shadeDark hover:bg-shadeLight duration-150">
+              <div className="menu-items">
                 <Link href="/categories/mobile-and-tablet">
                   <a>موبایل و تبلت</a>
                 </Link>
               </div>
-              <div className="px-5 py-1 dark:hover:bg-shadeDark hover:bg-shadeLight duration-150">
+              <div className="menu-items">
                 <Link href="/categories/home-consoles">
                   <a>کنسول های خانگی</a>
                 </Link>

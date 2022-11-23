@@ -49,7 +49,7 @@
     border-color: transparent transparent rgba(0, 0, 0, 0.7) transparent;
   }
   .product-card {
-    @apply bg-secondaryLight dark:bg-secondaryDark rounded-md border border-gray-300 dark:border-gray-600 justify-center items-center shadow-sm p-3 my-4 hover:shadow-lg dark:hover:border-gray-500 hover:border-gray-400 duration-200;
+    @apply bg-secondaryLight dark:bg-secondaryDark rounded-md justify-center items-center shadow-sm p-3 my-4 hover:shadow-lg duration-200;
   }
   .product-details-tab {
     @apply flex justify-center py-2 px-3 rounded-lg cursor-pointer shadow-sm;
@@ -70,10 +70,13 @@
     @apply cursor-pointer border border-gray-200 dark:border-secondaryDark px-3 py-1 dark:hover:bg-shadeDark hover:bg-shadeLight rounded-md;
   }
   .nav-button {
-    @apply cursor-pointer border border-gray-200 dark:border-secondaryDark dark:hover:bg-shadeDark hover:bg-shadeLight p-3 rounded-md;
+    @apply cursor-pointer border border-gray-300 dark:border-secondaryDark dark:hover:bg-shadeDark hover:bg-gray-300 p-3 rounded-md;
   }
   .social-links {
     @apply flex cursor-pointer px-2 py-1 text-gray-800 dark:text-white border border-gray-200 dark:border-secondaryDark dark:hover:bg-shadeDark hover:bg-shadeLight rounded-md;
+  }
+  .menu-items {
+    @apply px-5 py-1 rounded-md hover:bg-gray-300 dark:hover:bg-shadeDark duration-150;
   }
   .feature-box {
     @apply bg-secondaryLight dark:bg-secondaryDark flex flex-col items-center justify-center text-center py-6 rounded-md shadow-sm  hover:scale-105 duration-200 xsm:w-full md:w-[20%] xsm:items-center xsm:justify-center;
@@ -93,5 +96,5 @@
 }
 
 body {
-  @apply font-vazir bg-primaryLight dark:bg-primaryDark text-textDark dark:text-textLight;
+  @apply font-vazir bg-primaryLight dark:bg-primaryDark text-gray-800 dark:text-gray-300;
 }
